@@ -1,4 +1,10 @@
 <header class="page-header">
   <h1>Admin &raquo; All Categories</h1>
   <%= render @categories %>
+  <h3>Create New Category</h3>
+  <%= form_for [:admin, @category] do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+  <% end %>
 </header>
