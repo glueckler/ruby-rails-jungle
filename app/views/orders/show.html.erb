@@ -6,6 +6,11 @@
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
+    <h4>Items:</h4>
+    <ol>
+      <%= render partial: "line_item", collection: @line_items %>
+    </ol>
+    <h4>Total Order Price: <%= number_to_currency(@order.total_cents / 100) %></h4>
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>

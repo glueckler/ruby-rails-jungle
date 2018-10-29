@@ -1,0 +1,17 @@
+<li>
+  <ul>
+    <li>
+      <%= @products[line_item.id].name %>
+    </li>
+    <li>
+      Quantity: <%= line_item.quantity %>
+    </li>
+    <li>
+      Price: <%= number_to_currency(line_item.item_price_cents / 100) %>
+    </li>
+    <li>
+      Total Price: <%= number_to_currency(line_item.total_price_cents / 100) %>
+    </li>
+  </ul>
+  
+</li>

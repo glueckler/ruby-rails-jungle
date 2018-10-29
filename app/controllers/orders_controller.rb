@@ -1,7 +1,10 @@
 class OrdersController < ApplicationController
-
+  
   def show
     @order = Order.find(params[:id])
+    @line_items = @order.line_items
+    @products = {}
+    @line_items.each { |l_i| @products[l_i[:id]] = Product.find(l_i) }
   end
 
   def create
